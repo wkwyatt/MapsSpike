@@ -18,7 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     
     // Save the location of the user in variable instead of constantly updating the location and using unnecessary memory
-    var myPosition = CLLocationCoordinate2D()
+    var myPosition = CLLocationCoordinate2D(latitude: 37.33233141, longitude: -122)
 
     // Outlets
     @IBOutlet weak var lblLocation: UILabel!
@@ -37,8 +37,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Start updating the location as soon as possible
         locationManager.startUpdatingLocation()
         
+        // Create a drop pin
+        let annotation = MKPointAnnotation()
         
+        // Give the annotation coordinates and a title
+        annotation.coordinate = myPosition
+        annotation.title = "Venue"
+        annotation.subtitle = "Address of the venue"
         
+        // Set the drop pin in the mapView
+        mapView.addAnnotation(annotation)
         
     }
 
