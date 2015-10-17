@@ -9,6 +9,7 @@
 import UIKit
 // Make sure to import MapKit and CoreLocation frameworks
 import CoreLocation
+import MapKit
 
 // Add the location manager delegate to the class to conform to the CLLocationManager
 class ViewController: UIViewController, CLLocationManagerDelegate {
@@ -21,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // Outlets
     @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +60,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Set the current location to global variable
         myPosition = newLocation.coordinate
         
+        // Stop updating the location to save memory and battery
         locationManager.stopUpdatingLocation()
     
+        // Update label text with location
         lblLocation.text = "Got location \(newLocation.coordinate.latitude) , \(newLocation.coordinate.longitude)"
+        
+        // view level of the view on the map: the higher the number the more you zoom out. Takes floating numbers
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        
+        // Create region that will show in the mapkit view
+        let region = MKCoordinateRegion(center: myPosition, span: span)
+        
+        // Set the region in the actual view on the device
+        mapView.setRegion(region, animated: true)
+        
     }
 
 

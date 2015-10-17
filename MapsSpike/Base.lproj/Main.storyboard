@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,6 +29,9 @@
                                     <action selector="startGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKo-5M-M2c"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtO-o3-IbW">
+                                <rect key="frame" x="16" y="256" width="568" height="329"/>
+                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-52-ETf">
                                 <rect key="frame" x="279" y="61" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -37,15 +41,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gtO-o3-IbW" secondAttribute="bottom" constant="15" id="16i-4N-Aot"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="24" id="3wA-n6-hHX"/>
                             <constraint firstItem="2oW-zm-yXh" firstAttribute="top" secondItem="jM2-52-ETf" secondAttribute="bottom" constant="85" id="8Sf-Zh-lfi"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JEP-uj-LxS"/>
                             <constraint firstItem="2oW-zm-yXh" firstAttribute="centerX" secondItem="jM2-52-ETf" secondAttribute="centerX" id="TMn-dl-dv4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="368" id="Ywm-nP-0Sn"/>
                             <constraint firstItem="jM2-52-ETf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="Yzd-vF-zTT"/>
                             <constraint firstItem="jM2-52-ETf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jKX-1k-uCA"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="centerX" secondItem="2oW-zm-yXh" secondAttribute="centerX" id="uxH-MG-WRd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lblLocation" destination="jM2-52-ETf" id="ctB-Dx-aiK"/>
+                        <outlet property="mapView" destination="gtO-o3-IbW" id="YRf-zZ-Qo3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
