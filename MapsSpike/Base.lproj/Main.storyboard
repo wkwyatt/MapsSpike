@@ -15,8 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oW-zm-yXh">
+                                <rect key="frame" x="230" y="167" width="141" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="kP7-g6-SFq"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cKo-5M-M2c"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-52-ETf">
+                                <rect key="frame" x="279" y="61" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="top" secondItem="jM2-52-ETf" secondAttribute="bottom" constant="85" id="8Sf-Zh-lfi"/>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="centerX" secondItem="jM2-52-ETf" secondAttribute="centerX" id="TMn-dl-dv4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="368" id="Ywm-nP-0Sn"/>
+                            <constraint firstItem="jM2-52-ETf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="Yzd-vF-zTT"/>
+                            <constraint firstItem="jM2-52-ETf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jKX-1k-uCA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblLocation" destination="jM2-52-ETf" id="ctB-Dx-aiK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

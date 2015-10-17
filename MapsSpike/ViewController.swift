@@ -15,7 +15,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // Create location manager
     var locationManager = CLLocationManager()
+    
+    // Save the location of the user in variable instead of constantly updating the location and using unnecessary memory
+    var myPosition = CLLocationCoordinate2D()
 
+    // Outlets
+    @IBOutlet weak var lblLocation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,6 +36,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +46,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     
+    @IBAction func startGPS(sender: UIButton) {
+        
+        locationManager.startUpdatingLocation()
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         
         println("Got location \(newLocation.coordinate.latitude) , \(newLocation.coordinate.longitude)")
+        
+        // Set the current location to global variable
+        myPosition = newLocation.coordinate
+        
+        locationManager.stopUpdatingLocation()
     
-    
+        lblLocation.text = "Got location \(newLocation.coordinate.latitude) , \(newLocation.coordinate.longitude)"
     }
 
 
