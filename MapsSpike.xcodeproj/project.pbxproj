@@ -13,6 +13,8 @@
 		C51F5B831BCEBDDA00F3D7C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51F5B821BCEBDDA00F3D7C0 /* Images.xcassets */; };
 		C51F5B861BCEBDDA00F3D7C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51F5B841BCEBDDA00F3D7C0 /* LaunchScreen.xib */; };
 		C51F5B921BCEBDDB00F3D7C0 /* MapsSpikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F5B911BCEBDDB00F3D7C0 /* MapsSpikeTests.swift */; };
+		C572C7001BD3075C00CCD826 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C572C6FF1BD3075C00CCD826 /* CoreLocation.framework */; };
+		C572C7021BD3076300CCD826 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C572C7011BD3076300CCD826 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		C51F5B8B1BCEBDDB00F3D7C0 /* MapsSpikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsSpikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51F5B901BCEBDDB00F3D7C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51F5B911BCEBDDB00F3D7C0 /* MapsSpikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsSpikeTests.swift; sourceTree = "<group>"; };
+		C572C6FF1BD3075C00CCD826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C572C7011BD3076300CCD826 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C572C7021BD3076300CCD826 /* MapKit.framework in Frameworks */,
+				C572C7001BD3075C00CCD826 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,8 @@
 		C51F5B6D1BCEBDDA00F3D7C0 = {
 			isa = PBXGroup;
 			children = (
+				C572C7011BD3076300CCD826 /* MapKit.framework */,
+				C572C6FF1BD3075C00CCD826 /* CoreLocation.framework */,
 				C51F5B781BCEBDDA00F3D7C0 /* MapsSpike */,
 				C51F5B8E1BCEBDDB00F3D7C0 /* MapsSpikeTests */,
 				C51F5B771BCEBDDA00F3D7C0 /* Products */,
@@ -411,6 +419,7 @@
 				C51F5B971BCEBDDB00F3D7C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C51F5B981BCEBDDB00F3D7C0 /* Build configuration list for PBXNativeTarget "MapsSpikeTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				C51F5B9A1BCEBDDB00F3D7C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
