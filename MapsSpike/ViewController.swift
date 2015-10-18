@@ -55,6 +55,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    // Action button
+    @IBAction func addPin(sender: UILongPressGestureRecognizer) {
+        
+        // Where the user is clicking in the map view
+        let location = sender.locationInView(self.mapView)
+        
+        // Convert the location the user pressed on into a coordinate on the map
+        let localCoord = self.mapView.convertPoint(location, toCoordinateFromView: self.mapView)
+        
+        // Create drop pin
+        let pressedAnnotation = MKPointAnnotation()
+        
+        // Set drop pin attributes and coordinates
+        pressedAnnotation.coordinate = localCoord
+        pressedAnnotation.title = "My Location"
+        pressedAnnotation.subtitle = "An address or description"
+        
+        // Remove current drop pins
+        self.mapView.removeAnnotations(mapView.annotations)
+        
+        // Add new drop pin where the user pressed
+        self.mapView.addAnnotation(pressedAnnotation)
+    }
     
     @IBAction func startGPS(sender: UIButton) {
         
