@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-52-ETf">
+                                <rect key="frame" x="279" y="61" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oW-zm-yXh">
-                                <rect key="frame" x="230" y="167" width="141" height="65"/>
+                                <rect key="frame" x="16" y="183" width="141" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="141" id="kP7-g6-SFq"/>
+                                    <constraint firstAttribute="width" constant="141" id="L0A-gy-IZl"/>
+                                    <constraint firstAttribute="height" constant="65" id="yCn-Pp-N3z"/>
                                 </constraints>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,27 +42,38 @@
                                 <rect key="frame" x="16" y="256" width="568" height="329"/>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CIN-ju-TkB"/>
                                     <outletCollection property="gestureRecognizers" destination="fS5-ux-xgp" appends="YES" id="NX7-cO-Ili"/>
                                 </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM2-52-ETf">
-                                <rect key="frame" x="279" y="61" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2J-OY-dRI">
+                                <rect key="frame" x="443" y="183" width="141" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="fUf-gF-Qwb"/>
+                                </constraints>
+                                <state key="normal" title="Directions">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDirections:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nlL-N9-u9g"/>
+                                    <action selector="startGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FOg-XP-Nfr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gtO-o3-IbW" secondAttribute="bottom" constant="15" id="16i-4N-Aot"/>
-                            <constraint firstItem="gtO-o3-IbW" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="24" id="3wA-n6-hHX"/>
-                            <constraint firstItem="2oW-zm-yXh" firstAttribute="top" secondItem="jM2-52-ETf" secondAttribute="bottom" constant="85" id="8Sf-Zh-lfi"/>
-                            <constraint firstItem="gtO-o3-IbW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JEP-uj-LxS"/>
-                            <constraint firstItem="2oW-zm-yXh" firstAttribute="centerX" secondItem="jM2-52-ETf" secondAttribute="centerX" id="TMn-dl-dv4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="368" id="Ywm-nP-0Sn"/>
+                            <constraint firstItem="C2J-OY-dRI" firstAttribute="baseline" secondItem="2oW-zm-yXh" secondAttribute="firstBaseline" id="3dy-Ma-O7M"/>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="baseline" secondItem="C2J-OY-dRI" secondAttribute="firstBaseline" id="8D0-qI-8l6"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="leading" secondItem="2oW-zm-yXh" secondAttribute="leading" id="CsO-Xk-BkR"/>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="top" secondItem="C2J-OY-dRI" secondAttribute="top" id="GS6-mJ-JUk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gtO-o3-IbW" secondAttribute="bottom" constant="15" id="Yds-fS-G35"/>
                             <constraint firstItem="jM2-52-ETf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="Yzd-vF-zTT"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="centerX" secondItem="jM2-52-ETf" secondAttribute="centerX" id="bJP-yq-kUI"/>
                             <constraint firstItem="jM2-52-ETf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jKX-1k-uCA"/>
-                            <constraint firstItem="gtO-o3-IbW" firstAttribute="centerX" secondItem="2oW-zm-yXh" secondAttribute="centerX" id="uxH-MG-WRd"/>
+                            <constraint firstItem="C2J-OY-dRI" firstAttribute="trailing" secondItem="gtO-o3-IbW" secondAttribute="trailing" id="m2s-b4-aod"/>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="163" id="nbT-Dg-i38"/>
+                            <constraint firstItem="gtO-o3-IbW" firstAttribute="top" secondItem="2oW-zm-yXh" secondAttribute="bottom" constant="8" symbolic="YES" id="noA-4i-Dqv"/>
+                            <constraint firstItem="2oW-zm-yXh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oK5-8p-aks"/>
                         </constraints>
                     </view>
                     <connections>
